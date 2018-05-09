@@ -9,7 +9,7 @@ context(arch='arm', os='linux')
 
 ## premade shell example ##
 sh64 = shellcraft.sh()
-payload = asm(sh64) # asm() will assemble any shellcode in at&t syntax
+payload = asm(sh64) # asm() will assemble any shellcode in intel syntax
 
 ## other premades ##
 shellcraft.crash()

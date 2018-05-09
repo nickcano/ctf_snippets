@@ -1,7 +1,7 @@
 from pwn import *
 
-local_info = ['binary', 'lib/x86_64-linux-gnu/libc-2.23.so']
-remote_info = ['addr', 0000, 'libc.so.6']
+local_info = ['binary_name', 'lib/x86_64-linux-gnu/libc-2.23.so']
+remote_info = ['network_addr', 0000, 'libc.so.6']
 
 libc_path = ''
 if (args.REMOTE):
@@ -13,7 +13,7 @@ else:
 
 if (len(libc_path) > 0):
 	libc = ELF(libc_path)
-
+binary = ELF(local_info[1])
 
 ## examples ##
 io.recv()
