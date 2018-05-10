@@ -9,11 +9,11 @@ if (args.REMOTE):
 	io = remote(remote_info[0], remote_info[1])
 else:
 	libc_path = local_info[1]
-	io = process("shop", raw=False)
+	io = process(local_info[0], raw=False)
 
 if (len(libc_path) > 0):
 	libc = ELF(libc_path)
-binary = ELF(local_info[1])
+binary = ELF(local_info[0])
 
 ## examples ##
 io.recv()
